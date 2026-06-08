@@ -51,8 +51,8 @@ app.use('/graphql', (req: Request, res: Response) => {
 
 app.get('/favicon.ico', (_req: Request, res: Response) => res.sendStatus(204))
 
-app.get('/', (_req: Request, res: Response) => {
-    res.send('MovieCrud Server')
+app.get('/', function (req, res) {
+    res.json({ status: 'ok' })
 })
 
 // Centralized error handler — never leak stack traces
